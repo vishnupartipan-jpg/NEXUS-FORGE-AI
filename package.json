@@ -1,0 +1,22 @@
+{
+  "name": "nexus-forge-ai",
+  "version": "0.1.0",
+  "description": "Offline-first AI code studio",
+  "main": "src/main/main.js",
+  "private": true,
+  "scripts": {
+    "postinstall": "electron-builder install-app-deps",
+    "start": "electron .",
+    "dist": "electron-builder"
+  },
+  "build": {
+    "appId": "ai.nexusforge.app",
+    "productName": "NEXUS FORGE AI",
+    "files": ["src/**/*", "package.json"],
+    "win": { "target": "nsis" },
+    "mac": { "target": "dmg" },
+    "linux": { "target": "AppImage" }
+  },
+  "dependencies": { "better-sqlite3": "^11.10.0" },
+  "devDependencies": { "electron": "^33.4.0", "electron-builder": "^25.1.8" }
+}
